@@ -1,4 +1,4 @@
-FROM docker.io/kicad/kicad:8.0.4
+FROM docker.io/kicad/kicad:8.0.6
 ARG IBOM_VERSION="v2.9.0"
 
 # KiCad image leaves us with user 'kicad' set

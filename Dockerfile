@@ -1,4 +1,4 @@
-FROM docker.io/kicad/kicad:8.0.7
+FROM docker.io/kicad/kicad:8.0.8
 ARG IBOM_VERSION="2.9.0"
 ARG KIBOM_VERSION="1.9.1"
 

@@ -5,7 +5,7 @@ ARG KIBOM_VERSION="1.9.1"
 # KiCad image leaves us with user 'kicad' set
 USER root
 
-RUN apt-get update && apt-get -y install unzip zip curl git && rm -rf /var/cache/apt/archives /var/lib/apt/lists
+RUN apt-get update && apt-get -y install qpdf unzip zip curl git && rm -rf /var/cache/apt/archives /var/lib/apt/lists
 
 RUN curl -L https://github.com/openscopeproject/InteractiveHtmlBom/archive/refs/tags/v${IBOM_VERSION}.zip -o /ibom.zip && \
     unzip -d /opt /ibom.zip && rm /ibom.zip && \
@@ -17,3 +17,5 @@ RUN curl -L https://github.com/SchrodingersGat/kibom/archive/refs/tags/${KIBOM_V
     ln -s /opt/KiBoM-${KIBOM_VERSION}/KiBOM_CLI.py /usr/local/bin/
 
 USER kicad
+
+COPY assembly-drawing-theme.json /home/kicad/.config/kicad/8.0/colors/assembly-drawing-theme.json

@@ -1,4 +1,4 @@
-FROM docker.io/kicad/kicad:8.0.8
+FROM docker.io/kicad/kicad:9.0.0-amd64
 ARG IBOM_VERSION="2.9.0"
 ARG KIBOM_VERSION="1.9.1"
 
@@ -18,4 +18,4 @@ RUN curl -L https://github.com/SchrodingersGat/kibom/archive/refs/tags/${KIBOM_V
 
 USER kicad
 
-COPY assembly-drawing-theme.json /home/kicad/.config/kicad/8.0/colors/assembly-drawing-theme.json
+COPY assembly-drawing-theme.json /home/kicad/.config/kicad/9.0/colors/assembly-drawing-theme.json

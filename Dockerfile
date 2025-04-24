@@ -1,4 +1,4 @@
-FROM docker.io/kicad/kicad:9.0.1-amd64
+FROM docker.io/kicad/kicad:9.0.0-amd64
 ARG IBOM_VERSION="2.9.0"
 ARG KIBOM_VERSION="1.9.1"
 
@@ -15,6 +15,8 @@ ENV INTERACTIVE_HTML_BOM_NO_DISPLAY=y
 RUN curl -L https://github.com/SchrodingersGat/kibom/archive/refs/tags/${KIBOM_VERSION}.zip -o /kibom.zip && \
     unzip -d /opt /kibom.zip && rm /kibom.zip && \
     ln -s /opt/KiBoM-${KIBOM_VERSION}/KiBOM_CLI.py /usr/local/bin/
+
+RUN git config --global --add safe.directory "*"
 
 USER kicad
 

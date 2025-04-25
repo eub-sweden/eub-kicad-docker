@@ -16,8 +16,9 @@ RUN curl -L https://github.com/SchrodingersGat/kibom/archive/refs/tags/${KIBOM_V
     unzip -d /opt /kibom.zip && rm /kibom.zip && \
     ln -s /opt/KiBoM-${KIBOM_VERSION}/KiBOM_CLI.py /usr/local/bin/
 
-RUN git config --global --add safe.directory "*"
-
 USER kicad
+
+# Allow git commands to be run even if the user does not own the directory
+RUN git config --global --add safe.directory "*"
 
 COPY assembly-drawing-theme.json /home/kicad/.config/kicad/9.0/colors/assembly-drawing-theme.json

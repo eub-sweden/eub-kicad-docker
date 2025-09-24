@@ -1,5 +1,5 @@
 FROM docker.io/kicad/kicad:9.0.4
-ARG IBOM_VERSION="2.9.0"
+ARG IBOM_VERSION="2.10.0"
 ARG KIBOM_VERSION="1.9.1"
 
 # KiCad image leaves us with user 'kicad' set

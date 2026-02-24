@@ -6,6 +6,8 @@ ARG KIBOM_VERSION="1.9.1"
 USER root
 
 RUN apt-get update && apt-get -y install csvkit qpdf unzip zip curl git && rm -rf /var/cache/apt/archives /var/lib/apt/lists
+RUN apt-get update && apt-get -y install pandoc texlive-latex-base texlive-fonts-recommended texlive-latex-recommended texlive-xetex lmodern fonts-open-sans fonts-roboto fonts-liberation && rm -rf /var/cache/apt/archives /var/lib/apt/lists
+
 
 RUN curl -L https://github.com/openscopeproject/InteractiveHtmlBom/archive/refs/tags/v${IBOM_VERSION}.zip -o /ibom.zip && \
     unzip -d /opt /ibom.zip && rm /ibom.zip && \
